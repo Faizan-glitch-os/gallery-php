@@ -4,15 +4,16 @@ include './inc/images.inc.php';
 
 ?>
 <?php include './views/header.php'; ?>
-<div class="gallery">
+<div>
     <?php foreach($imageTitles AS $key => $value): ?>
-        <a href="image.php?img=<?php echo $key ?>&title=<?php echo $value ?>">
+        <a href="image.php?<?php echo http_build_query(['img' => $key]) ?>">
             <article>
-                <h2><?php echo $value ?></h2>
-                <img src="./images/<?php echo $key ?>" alt="<?php echo $key ?>">
+                <h2><?php echo e($value) ?></h2>
+                <img src="./images/<?php echo rawurlencode($key) ?>" alt="<?php echo e($key) ?>">
             </article>
         </a>
     <?php endforeach; ?>
     </div>
 
 <?php include './views/footer.php'; ?>
+ 
