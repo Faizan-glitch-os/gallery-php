@@ -6,7 +6,7 @@ include './inc/images.inc.php';
 <?php include './views/header.php'; ?>
 
 <?php
-    if(!empty($_GET['img']) && !empty($imageTitles[$_GET['img']])): ?>
+    if (!empty($_GET['img']) && !empty($imageTitles[$_GET['img']])): ?>
        <?php $img = e($_GET['img']); ?>
        <h1><?php echo $imageTitles[$img] ?></h1>
        <img src="./images/<?php echo $img ?>" alt="<?php echo $imageTitles[$img] ?>">
